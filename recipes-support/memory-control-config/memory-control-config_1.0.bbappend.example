@@ -1,0 +1,21 @@
+# memory-control-config_1.0.bbappend.example
+#
+# Copy this file to your layer as:
+#
+#   recipes-support/memory-control-config/memory-control-config_1.0.bbappend
+#
+# and edit the entries you need. Every entry uses the form:
+#
+#   <unit>:<limit>[:<oom_policy>]
+#
+#   <unit>        systemd service name (the .service suffix is optional)
+#   <limit>       K / M / G suffix or raw bytes (e.g. 512M, 256K, 1G)
+#   <oom_policy>  "reboot" (default) or "kill"
+#
+# Syntax note: the leading space before each entry inside the string is
+# required when using :append so that entries are space-separated.
+
+MEMORY_CONTROL_SERVICES:append = " \
+    webui:256M:kill \
+    inventory-sync:128M \
+    "

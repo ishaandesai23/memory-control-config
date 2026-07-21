@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Editors / OS
+*.swp
+*~
+.DS_Store
+
+# BitBake / build output (never commit these)
+tmp/
+build/
+sstate-cache/
+downloads/
